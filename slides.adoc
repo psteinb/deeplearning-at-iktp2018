@@ -1,16 +1,51 @@
-= Deep Learning
+= Deep Learning in a nutshell - a tour de force
+:imagesdir: images
+:icons: font
+:date: October 11, 2018
+:my_name: Peter Steinbach
+:my_email: steinbach@scionics.de
+:my_twitter: psteinb_
+:my_github: psteinb
+:stem:
 
-== Slide One
+https://tu-dresden.de/mn/physik/iktp/das-institut/termine/termine/peter-steinbac-machine-learning[IKTP Institute Seminar] +
 
-* Foo
-* Bar
-* World
+mailto:{my_email}[{my_name}], {date}, Dresden, Germany
 
-== Slide Two
 
-Hello World - Good Bye Cruel World
+== Preface
+
+=== My employer
+
+image::scionics_main_logo.png[width=80%]
+
+https://scionics.de[Scionics Computer Innovation GmbH]
 
 [NOTE.speaker]
 --
-Actually things aren't that bad
+- offer scientific consulting 
+- data analysis, large data handling, ...
 --
+
+=== Our client: https://mpi-cbg.de[MPI CBG]
+
+image::x600px-MPI-CBG_building_outside_4pl.jpg[]
+
+https://mpi-cbg.de[Max Planck Institute for Molecular Cell Biology and Genetics]
+
+[NOTE.speaker]
+--
+- scientific computing facility
+- my role
+--
+
+
+=== Disclaimer
+
+[.stretch]
+image::bart_simpson_white.png[]
+
+These slides are open-source:
+
+https://github.com/psteinb/deeplearning-at-iktp2018[github.com/psteinb/deeplearning-at-iktp2018]
+
