@@ -6,6 +6,9 @@
 :my_email: steinbach@scionics.de
 :my_twitter: psteinb_
 :my_github: psteinb
+:revealjs_slideNumber: true
+:revealjs_center: false
+:customcss: custom.css
 :stem:
 
 https://tu-dresden.de/mn/physik/iktp/das-institut/termine/termine/peter-steinbac-machine-learning[IKTP Institute Seminar] +
@@ -48,4 +51,116 @@ image::bart_simpson_white.png[]
 These slides are open-source:
 
 https://github.com/psteinb/deeplearning-at-iktp2018[github.com/psteinb/deeplearning-at-iktp2018]
+
+
+== A Detour: https://indico.cern.ch/event/587955/contributions/2937510/attachments/1683248/2705359/20180712-msmk-trackml-v3.pdf[TrackML]
+
+image::chep2018-mkiehn-p3.png[size=100%, position=right 50% bottom 0%]
+
+[NOTE.speaker]
+--
+- Are there better approaches?
+- How to find them?
+- Do we have to do it ourselves?
+- Use challenge format to look for new solutions
+--
+
+=== https://indico.cern.ch/event/587955/contributions/2937510/attachments/1683248/2705359/20180712-msmk-trackml-v3.pdf[TrackML flow]
+
+image::chep2018-mkiehn-p4.png[size=100%, position=right 50% bottom 0%]
+
+=== https://indico.cern.ch/event/587955/contributions/2937510/attachments/1683248/2705359/20180712-msmk-trackml-v3.pdf[TrackML Challenge]
+
+image::chep2018-mkiehn-p5.png[size=100%, position=right 50% bottom 0%]
+
+=== https://indico.cern.ch/event/587955/contributions/2937510/attachments/1683248/2705359/20180712-msmk-trackml-v3.pdf[TrackML status]
+
+image::chep2018-mkiehn-p7.png[size=100%, position=right 50% bottom 0%]
+
+=== https://indico.cern.ch/event/587955/contributions/2937510/attachments/1683248/2705359/20180712-msmk-trackml-v3.pdf[TrackML results]
+
+image::trackml-accuracy-phase-leaderboard.png[background,size=cover]
+
+=== Which approach won?
+
+//image by @weekendr
+image::pexels-bright-bulb-dark-132340_1024px.jpg[background,size=cover]
+
+
+[NOTE.speaker]
+--
+- Wait until the end!
+--
+
+=== The No Free Lunch Theorem
+
+[NOTE] 
+.By http://www.no-free-lunch.org/[David Wolpert]
+==== 
+Averaged over all possible data generating distributions, every classification algorithm has the same error
+rate when classifying previously unobserved points.
+====
+
+[NOTE.speaker]
+--
+- Ian Goodfellow: No machine learning algorithm is universally any better than any other.
+- Extra: The most sophisticated algorithm we can conceive of has the same average performance (over
+all possible tasks) as merely predicting that every point belongs to the same class.
+--
+
+=== What?
+
+//by Pexel User Gerd Altmann, https://www.pexels.com/@geralt
+image::pexels-photo-sad.jpg[background,size=cover]
+
+=== Machine Learning means
+
+[NOTE] 
+.By https://www.deeplearningbook.org/[Ian Goodfellow]
+==== 
+This means that the goal of machine learning research is not to seek a universal learning algorithm or the absolute best learning algorithm. Instead, **our goal is to understand what kinds of distributions are relevant to the “real world”** that an AI agent experiences, and what kinds of machine learning algorithms perform well on data drawn from the kinds of data generating distributions we care about.
+====
+
+[NOTE.speaker]
+--
+- Show you yet another technique: Deep Learning!
+--
+
+== Deep Learning
+
+[%step]
+* branch of machine learning
+* learning data representations
+* supervised, semi-supervised or unsupervised learning
+* applications in many fields
+
+=== Object Detection
+
+video::VOC3huqHrss[youtube, start=5]
+
+=== Image Alteration
+
+image::horse2zebra.gif[width=100%]
+
+by https://github.com/junyanz/CycleGAN
+
+=== Image Restoration
+
+[cols="^.<,^.<",width=100%,frame=none,grid=none] 
+|===
+a| image:denoising_planaria_magma_input.png[width=100%]
+a| image:denoising_planaria_magma_network.png[width=100%]
+
+s| Planaria Worm from Microscope
+s| Planaria Worm after DL
+|===
+
+//much later when discussing the problems of AI
+
+=== Relying on Weights can be dangerous
+
+image::putin-on-horse.jpg[width=100%]
+from https://twitter.com/genekogan/status/855032573327581185
+
+
 
