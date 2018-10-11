@@ -339,14 +339,6 @@ GCE, single K80 instance, 1vCPU, 6GB RAM, 10GB disk
 - keras:2.1.5,tensorflow:1.7.0 
 --
 
-=== framework differences?
-
-image::deeprace-frameworks.svg[]
-
-[NOTE.speaker]
---
-- Titan Xp
---
 
 == Wrapping up
 
@@ -428,3 +420,12 @@ image::chep2018-mkiehn-p5.png[size=100%, position=right 50% bottom 0%]
 === https://indico.cern.ch/event/686555/contributions/2976579/attachments/1680748/2700965/ICHEP_TrackML_Jul052018.pdf[TrackML Simulation]
 
 image::ICHEP2018_TrackML_Jul052018_p12.png[size=100%, position=right 50% bottom 0%]
+
+=== deeprace framework differences?
+
+image::deeprace-frameworks.svg[]
+
+[NOTE.speaker]
+--
+- Titan Xp
+--
