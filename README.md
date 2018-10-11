@@ -1,6 +1,6 @@
 # Deep Learning
 
-Slides given at the 2018 Institute Seminar of the Institute for Nuclear and Particle Physics at the TU Dresden.
+Slides given at the 2018 Institute Seminar of the Institute for Nuclear and Particle Physics at the TU Dresden. To view them, go [here](https://psteinb.github.io/deeplearning-at-iktp2018/).
 
 # How to build the slides
 
