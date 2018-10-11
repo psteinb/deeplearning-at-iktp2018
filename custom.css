@@ -1,0 +1,10 @@
+
+.reveal section.title h2 {
+    margin-top: 1em;
+}
+
+.reveal section.title small {
+    margin-top: 1em;
+    font-weight: bold;
+    color: white;
+}

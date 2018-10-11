@@ -134,33 +134,280 @@ This means that the goal of machine learning research is not to seek a universal
 * supervised, semi-supervised or unsupervised learning
 * applications in many fields
 
-=== Object Detection
+=== Multi-Object Detection with https://arxiv.org/abs/1612.08242[Yolo v2]
 
 video::VOC3huqHrss[youtube, start=5]
 
-=== Image Alteration
+=== https://github.com/junyanz/CycleGAN[Image Alteration] 
 
-image::horse2zebra.gif[width=100%]
+image::cycleGAN.jpeg[width=100%]
 
-by https://github.com/junyanz/CycleGAN
+https://arxiv.org/pdf/1703.10593.pdf)[arxiv:1703.10593]
 
-=== Image Restoration
+=== http://csbdeep.bioimagecomputing.com/index.html[Image Restoration]
+
+Planaria Worm 
 
 [cols="^.<,^.<",width=100%,frame=none,grid=none] 
 |===
 a| image:denoising_planaria_magma_input.png[width=100%]
 a| image:denoising_planaria_magma_network.png[width=100%]
 
-s| Planaria Worm from Microscope
-s| Planaria Worm after DL
+s| from Microscope
+s| after DL based denoising
 |===
 
-//much later when discussing the problems of AI
+=== Learning from Mistakes
+
+video::TmPfTpjtdgg[youtube, options=autoloop]
+
+=== [Let's narrow a bit]
+
+//
+image:narrow-arrows-box-business-533189.jpg[background,size=cover]
+
+
+== Hands-on Deep Learning
+
+IMPORTANT: (Deep) Convolutional Neural Networks
+
+=== Demo Time
+
+image:1024px-board-broken-builder-209235.jpg[background,size=cover]
+
+== Why does it take so long?
+
+=== Heavy-Lifting inside CNNs
+
+[cols="^.<,^.<",width=100%,frame=none,grid=none] 
+|===
+a| image:3D_Convolution_Animation.gif[width=100%]
+a| image:Matrix_multiplication_diagram_2.png[width=100%]
+
+s| Convolutions
+s| Matrix Operations
+|===
+
+=== A closer look
+
+- Convolutions +
+  latexmath:[y_i = \sum_{n = 0}^{N_k} x_{i+/-n}*k_{i+/-n} ]
+
+- Matrix Operations +
+  latexmath:[AB=Y, y_{ij} = \sum_{k} a_{ik} * b_{kj} ]
+
+- Common? +
+**Dot Product Structure!**
+
+[NOTE.speaker]
+--
+- thousands of dot-products
+- one HD frame with 3x3 kernel:
+ 2.067.604 independent pixels
+35.149.268 flops
+37.216.872 loads
+ 2.067.604 stores
+--
+
+=== Where do CPUs come from ?
+
+image::wing-commander.jpg[width=100%]
+
+Low Latency Matters Most
+
+[NOTE.speaker]
+--
+- PC users don't want to wait!
+--
+
+=== GPUs for Deep Learning 1/2
+
+image::gpu_cpu_dichotomy.svg[width=100%]
+
+[NOTE.speaker]
+--
+- GPU: smallest unit of concurrency 32 (>3000 cores)
+- CPU: smallest unit of concurrency 1 (10-20 cores)
+--
+
+=== GPUs for Deep Learning 2/2
+
+image::high_throughput_smx.svg[width=100%]
+
+Latency Hiding
+
+[NOTE.speaker]
+--
+- GPU: hides latency of memory access (larger bandwidth)
+- CPU: can hide latency to some degree only
+--
+
+=== Consequences on the market
+
+image::nvidia_stock.png[]
+
+Nvidia's stock pricing in the last years
+
+=== Benchmarks
+
+image::directions.png[]
+
+[NOTE.speaker]
+--
+- beginners typically don't know where to go
+- which framework?
+- web is full of good advice
+--
+
+=== https://github.com/psteinb/deeprace[deeprace]
+
+- usable benchmark with clear https://semver.org[semver] support
+- model code is fixed
+- **ResNet** (https://arxiv.org/pdf/1512.03385.pdf[v1], https://arxiv.org/pdf/1603.05027.pdf[v2]), https://www.biorxiv.org/content/early/2018/01/23/236463.1[CARE Denoising network]
+- Keras+TensorFlow or just TensorFlow
+- single and multi-gpu training (distributed planned)
+- data will be open-sourced once I find a sponsor
+
+=== Hardware
+
+* *local cluster*: https://doc.zih.tu-dresden.de/hpc-wiki/bin/view/Compendium/SystemTaurus[Taurus] at Technical University Dresden
+** single GPU node:
+*** Intel Xeon E5-2680 v3 12c
+*** 64GB RAM
+*** 4x Nvidia Tesla K80 GPU
+* local servers (Nvidia Titan Xp, Nvidia Tesla P100)
+
+=== Using ResNet on CIFAR10
+
+image::deeprace-full-single.svg[]
+
+[NOTE.speaker]
+--
+- Resnet32v1 (and Resnet56v1) as sample models on CIFAR10 dataset
+- time-per-epoch higher for smaller batches (more host-device transfers, backprop more often)
+--
+
+=== Containers!
+
+image::deeprace-full-vs-singularity.png[width=100%]
+
+https://www.sylabs.io/docs/[singularity] container = https://keras.io[Keras 2.1.5] + https://tensorflow.org[TensorFlow 1.3.0]       
+
+
+[NOTE.speaker]
+--
+- for setup and reproducibility
+- for the rest, use tf 1.7
+--
+
+=== Short runs only
+
+image::deeprace-short-runtimes.png[]
+
+[NOTE.speaker]
+--
+- as time per epoch is "flat" -> limit to `n=15` epochs
+- multiple runs per measurements
+--
+
+=== single-GPU training
+
+image::deeprace-short-hw.png[]
+
+[NOTE.speaker]
+--
+- architecture difference Pascal (2016) and Kepler (2013/2014)
+- note: gaming GPUs
+--
+
+=== cloud?
+
+image::deeprace-short-runtimes-vs-cloud.svg[]
+
+GCE, single K80 instance, 1vCPU, 6GB RAM, 10GB disk
+
+[NOTE.speaker]
+--
+- keras:2.1.5,tensorflow:1.7.0 
+--
+
+=== framework differences?
+
+image::deeprace-frameworks.svg[]
+
+[NOTE.speaker]
+--
+- Titan Xp
+--
+
+== Wrapping up
+
+=== Deep Learning?
+
+- for (unstructured) data like images/sequences/..., neighborhood information crucial to extract information
+- deep convolutional neural networks have become state of the art in many domains
+- tentatively a lot of compute power is needed
 
 === Relying on Weights can be dangerous
 
 image::putin-on-horse.jpg[width=100%]
 from https://twitter.com/genekogan/status/855032573327581185
 
+[NOTE.speaker]
+--
+- DL as a black box?
+--
+
+//from http://www.heatmapping.org/
+[%notitle,background-iframe="https://lrpserver.hhi.fraunhofer.de/image-classification",size=100%]
+=== DL as a black box?
+
+[NOTE.speaker]
+--
+- Interpretability is a big topic
+--
+
+== TrackML?
+
+=== Board Leader Place 3
+
+[%step]
+* construct tracklets 2-3 layers(decision tree as code)
+* prolong tracks to the next layer & find good match
+* recursively select best track based on metric
+
+=== Board Leader Place 2
+
+[%step]
+* neural network (4k-2k-2k-2k-1k neurons) to select pairs of hits that belong to one track
+* use seed hit, predict best pairing & construct tracklet
+* extend tracklet until no hits left (track candidates)
+* recursively select best track from candidates in event
+
+=== https://github.com/top-quarks/top-quarks[TrackML Winner]
+
+[%step]
+* create pairs of hits in adjacent layers
+* prune pairs with logistic regression based on heuristics
+* create triples
+* prune triples with logistic regression based on heuristics
+* fit helix through triples to create candidate tracks
+* select best track (by random forest)
+
+=== https://github.com/top-quarks/top-quarks[Winning Strategy]
+
+[NOTE] 
+==== 
+Note that I have no knowledge of the field or generally used methods, and I spent little effort in trying to look at them. Therefore I don’t know what my novel findings are.
+====
+
+[NOTE]
+==== 
+I divided my algorithm into several steps, and created a scoring metric after each step, so that I could easily tell at which step I could earn the most score. I also made load / score function after each step for rapid debugging and tuning.
+====
+
+=== https://competitions.codalab.org/competitions/20112[Here is your chance!]
+
+image:black-and-white-decision-doors-277017.jpg[background,size=cover]
 
 
