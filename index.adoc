@@ -52,6 +52,13 @@ These slides are open-source:
 
 https://github.com/psteinb/deeplearning-at-iktp2018[github.com/psteinb/deeplearning-at-iktp2018]
 
+=== Ackowledgements
+
+* David Rousseau (CNRS/IN2P3, Université Paris-Saclay) & TrackML team
+* Noreen Walker & the Scicomp team (MPI CBG/Scionics)
+* Eric Brachmann (University Heidelberg)
+* Michael Kobel and Joany Manjarrez (IKTP)
+
 
 == A Detour: https://indico.cern.ch/event/587955/contributions/2937510/attachments/1683248/2705359/20180712-msmk-trackml-v3.pdf[TrackML]
 
@@ -409,7 +416,6 @@ I divided my algorithm into several steps, and created a scoring metric after ea
 === https://competitions.codalab.org/competitions/20112[Here is your chance!]
 
 image:black-and-white-decision-doors-277017.jpg[background,size=cover]
-
 
 == Backup
 

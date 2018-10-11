@@ -16,3 +16,9 @@ $ make slides
 
 Follow the steps outlined above to build the slidedeck. The open the produced `index.html` in a browser of your choice.
 
+# Acknowledgements
+
+* David Rousseau (CNRS/IN2P3, Université Paris-Saclay) & TrackML team
+* Noreen Walker & the Scicomp team (MPI CBG/Scionics)
+* Eric Brachmann (University Heidelberg)
+* Michael Kobel and Joany Manjarrez (IKTP)
