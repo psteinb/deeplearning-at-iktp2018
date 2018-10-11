@@ -77,9 +77,8 @@ image::chep2018-mkiehn-p5.png[size=100%, position=right 50% bottom 0%]
 
 image::chep2018-mkiehn-p7.png[size=100%, position=right 50% bottom 0%]
 
+[%notitle,background-iframe="https://www.kaggle.com/c/trackml-particle-identification/leaderboard",size=80%]
 === https://indico.cern.ch/event/587955/contributions/2937510/attachments/1683248/2705359/20180712-msmk-trackml-v3.pdf[TrackML results]
-
-image::trackml-accuracy-phase-leaderboard.png[background,size=cover]
 
 === Which approach won?
 
